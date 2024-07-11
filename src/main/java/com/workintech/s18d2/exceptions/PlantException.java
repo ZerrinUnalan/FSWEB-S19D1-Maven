@@ -1,4 +1,4 @@
-package com.workintech.s18d2.entity.exceptions;
+package com.workintech.s18d2.exceptions;
 
 import lombok.Getter;
 import lombok.Setter;

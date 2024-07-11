@@ -1,22 +1,21 @@
 package com.workintech.s18d2.services;
 
+import com.workintech.s18d2.repository.FruitRepository;
 import com.workintech.s18d2.entity.Fruit;
 import com.workintech.s18d2.exceptions.PlantException;
-import com.workintech.s18d2.repository.FruitRepository;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
-@AllArgsConstructor
 @Service
 public class FruitServiceImpl implements FruitService {
 
     private final FruitRepository fruitRepository;
 
+    @Autowired
     public FruitServiceImpl(FruitRepository fruitRepository) {
         this.fruitRepository = fruitRepository;
     }
@@ -28,7 +27,6 @@ public class FruitServiceImpl implements FruitService {
 
     @Override
     public Fruit getById(long id) {
-
         return fruitRepository
                 .findById(id)
                 .orElseThrow(() -> new PlantException("plant with given id is not exist: " + id, HttpStatus.NOT_FOUND));

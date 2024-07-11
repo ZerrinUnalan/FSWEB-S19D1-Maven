@@ -1,4 +1,4 @@
-package com.workintech.s18d2.controller.dto;
+package com.workintech.s18d2.dto;
 
 import com.workintech.s18d2.entity.Fruit;
 

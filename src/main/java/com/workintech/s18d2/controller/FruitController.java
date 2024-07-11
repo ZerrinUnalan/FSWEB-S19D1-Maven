@@ -1,6 +1,6 @@
 package com.workintech.s18d2.controller;
 
-import com.workintech.s18d2.controller.dto.FruitResponse;
+import com.workintech.s18d2.dto.FruitResponse;
 import com.workintech.s18d2.entity.Fruit;
 import com.workintech.s18d2.services.FruitService;
 import jakarta.validation.constraints.NotNull;
@@ -17,10 +17,6 @@ import java.util.List;
 @RequestMapping("/fruit")
 public class FruitController {
     private final FruitService fruitService;
-
-    public FruitController(FruitService fruitService) {
-        this.fruitService = fruitService;
-    }
 
     @GetMapping
     public List<Fruit> get() {
